@@ -12,6 +12,7 @@ explain select name from users where status = 1 limit 10; # 中
 explain select name from users where status = 1 and address = "ffff" limit 10; # 没中
 explain select name from users where name = "abc" and address = "ffff" limit 10; # 中
 explain select name from users where address = "ffff" and name = "abc" limit 10; # 中
+explain select * from users where address = "ffff" and name = "abc" limit 10; # 中
 explain select * from users where name = "Esta Kiehn" limit 10; # 中
 explain select * from users where name = "Esta Kiehn" and status = 1 limit 10; # 中
 explain select * from users where status = 1 and name = "Esta Kiehn" limit 10; # 中
