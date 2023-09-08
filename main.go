@@ -35,10 +35,10 @@ func process(db *sql.DB) {
 		status := fmt.Sprintf("%d", i%10) // 將數字轉為字串
 
 		if i == (numRecords - 1) {
-			queryString += fmt.Sprintf("('%s', '%s', '%s')", name, address, status)
-			break
+			queryString += fmt.Sprintf("('%s', '%s', '%s')  ", name, address, status)
+		} else {
+			queryString += fmt.Sprintf("('%s', '%s', '%s'), ", name, address, status)
 		}
-		queryString += fmt.Sprintf("('%s', '%s', '%s'), ", name, address, status)
 
 		if i != 0 && (i+1)%batchSize == 0 {
 			queryString = queryString[0 : len(queryString)-2]
